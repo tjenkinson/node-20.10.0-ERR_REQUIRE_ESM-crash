@@ -1,6 +1,10 @@
 # Node crash instead of `ERR_REQUIRE_ESM` error
 
-It seems with node `v20.10.0` if you use the `--abort-on-uncaught-exception` flag and try and `require` a module that is ESM, instead of the `ERR_REQUIRE_ESM` error being thrown the process crashes instead. In the debugger it looks like it fails at the internal `containsModuleSyntax` check and trying to step into it doesn't work, as it crashes.
+It seems with node `v20.10.0` if you use the `--abort-on-uncaught-exception` flag and try and `require` a module that is ESM, instead of the `ERR_REQUIRE_ESM` error being thrown the process crashes instead. 
+
+It looks like it's crashing here:
+
+https://github.com/nodejs/node/blob/4e713a3930b0758231ebaf6debbf30bb18eec920/lib/internal/modules/cjs/loader.js#L1406
 
 ## Reproduction Steps
 1. Install node `v20.10.0`
