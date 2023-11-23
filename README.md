@@ -4,7 +4,7 @@ It seems with node `v20.10.0` if you use the `--abort-on-uncaught-exception` fla
 
 It looks like it's crashing here:
 
-https://github.com/nodejs/node/blob/4e713a3930b0758231ebaf6debbf30bb18eec920/lib/internal/modules/cjs/loader.js#L1406
+https://github.com/nodejs/node/blob/4e713a3930b0758231ebaf6debbf30bb18eec920/lib/internal/modules/cjs/loader.js#L1406 which was added in https://github.com/nodejs/node/commit/a9b25356c0d651965b71ccd7802dfa373304deb8
 
 ## Reproduction Steps
 1. Install node `v20.10.0`
